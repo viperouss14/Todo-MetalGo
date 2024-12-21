@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Todo MetalGo</title>
-        <meta name='description' content='This is a todo app' />
       </Head>
       <Provider store={store}>
         <Component {...pageProps} />
