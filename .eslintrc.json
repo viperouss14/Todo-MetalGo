@@ -1,0 +1,9 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:react/recommended", "prettier"],
+  "ignorePatterns": ["next.config.mjs", "i18n/index.js"],
+  "rules": {
+    "no-unused-vars": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
+  }
+}

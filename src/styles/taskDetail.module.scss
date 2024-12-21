@@ -1,0 +1,183 @@
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.backButton {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  color: #4a5568;
+  background: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: #2d3748;
+    background-color: #f7fafc;
+    transform: translateX(-2px);
+  }
+}
+
+.backIcon {
+  transition: transform 0.2s ease;
+}
+
+.taskTitle {
+  margin: 24px 0;
+  padding-left: 48px;
+  color: #2d3748;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.titleLabel {
+  color: #4a5568;
+}
+
+.titleText {
+  color: #2d3748;
+}
+
+.completedTitle {
+  text-decoration: line-through;
+}
+
+.detailsContainer {
+  margin: 24px 0;
+  border-radius: 8px;
+  padding: 24px;
+  background: #f8fafc;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+  font-family: 'Poppins';
+  font-size: 16px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.detailLabel {
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 'Poppins';
+}
+
+.detailValue {
+  color: #2d3748;
+  font-size: 'Poppins';
+}
+
+.completedStatus {
+  color: #48bb78;
+}
+
+.pendingStatus {
+  color: #ed8936;
+}
+
+.toggleButton {
+  width: 100%;
+  margin-top: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  color: #ffffff;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.toggleButtonCompleted {
+  background-color: #ed8936;
+
+  &:hover {
+    background-color: #dd6b20;
+  }
+}
+
+.toggleButtonPending {
+  background-color: #48bb78;
+
+  &:hover {
+    background-color: #38a169;
+  }
+}
+
+.notFound {
+  margin: 40px 0;
+  color: #e53e3e;
+  font-family: 'Poppins';
+  font-size: 20px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .taskTitle {
+    margin: 20px 0;
+    padding-left: 40px;
+    font-size: 24px;
+  }
+
+  .backButton {
+    top: 16px;
+    left: 16px;
+  }
+
+  .detailsContainer {
+    margin: 16px 0;
+    padding: 16px;
+  }
+
+  .detailItem {
+    font-size: 14px;
+  }
+
+  .toggleButton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

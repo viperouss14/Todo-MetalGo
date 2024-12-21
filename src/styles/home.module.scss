@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  font-family: 'Poppins';
+  font-weight: 600;
+}
+
+.addButton {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  font-family: 'Poppins';
+  font-size: 1.2rem;
+  background-color: #38a169;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #2f855a;
+  }
+}

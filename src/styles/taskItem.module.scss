@@ -1,0 +1,91 @@
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 800px;
+  border-radius: 8px;
+}
+
+.taskId {
+  width: 9em;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  max-width: calc(100% - 20em);
+  text-decoration: none;
+}
+
+.title {
+  display: block;
+  width: 20em;
+  width: 100%;
+  overflow: hidden;
+  color: black;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover {
+    color: rgba(68, 133, 229, 0.529);
+  }
+}
+
+.completed {
+  color: black;
+  text-decoration: line-through;
+}
+
+.checkbox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  appearance: none;
+  &:checked {
+    border-color: #38a169;
+    background-color: #38a169;
+  }
+  &:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.removeButton {
+  border: none;
+  padding: 5px;
+  color: #666;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #fc8181;
+  }
+}
+
+@media (max-width: 840px) {
+  .taskItem {
+    width: 100%;
+  }
+
+  .link {
+    width: auto;
+  }
+}
