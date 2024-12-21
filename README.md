@@ -13,4 +13,4 @@ npm run dev
 - SCSS
 
 ## ТЗ
-[text](https://docs.google.com/document/d/1H-tJQC-m8EwZMuUtPxJ0X4wdz78orxtOxmKBfSFiq2U/edit?tab=t.0)
+[Техническое задание для тестового задания](https://docs.google.com/document/d/1H-tJQC-m8EwZMuUtPxJ0X4wdz78orxtOxmKBfSFiq2U/edit?tab=t.0)
