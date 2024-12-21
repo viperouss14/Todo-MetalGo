@@ -14,11 +14,17 @@ export default function Document() {
           href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'
           rel='stylesheet'
         />
-        <meta name='description' content='This is a todo app' />{' '}
+        <meta
+          name='description'
+          content='Todo MetalGo is a user-friendly app for managing your daily tasks. Easily create, edit, and track your to-dos.'
+        />{' '}
         <meta name='keywords' content='Todo, React, Next.js' />{' '}
         <meta name='author' content='Victor Nepomnyashchiy' />{' '}
         <meta property='og:title' content='Todo MetalGo' />{' '}
-        <meta property='og:description' content='This is a todo app' />{' '}
+        <meta
+          property='og:description'
+          content='Todo MetalGo is a user-friendly app for managing your daily tasks. Easily create, edit, and track your to-dos.'
+        />{' '}
         <meta property='og:image' content='/ogimage.png' />{' '}
         <meta property='og:url' content='https://todo-metalgo.vercel.app/' />
       </Head>
