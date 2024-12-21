@@ -4,7 +4,7 @@
 ```bash
 npm install
 npm run dev
-\\\
+```
 
 ## Технологии
 - Next.js
