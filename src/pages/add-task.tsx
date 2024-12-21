@@ -18,6 +18,13 @@ export default function AddTask() {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit(e as unknown as React.FormEvent);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <button onClick={() => router.back()} className={styles.backButton}>
@@ -28,6 +35,7 @@ export default function AddTask() {
         <textarea
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          onKeyDown={handleKeyDown}
           placeholder='Введите название задачи'
           required
           className={styles.textarea}
