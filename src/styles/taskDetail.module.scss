@@ -41,7 +41,7 @@
   color: #2d3748;
   font-family: 'Poppins';
   font-weight: 600;
-  font-size: 28px;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   line-height: 1.4;
   word-break: break-word;
 }
@@ -178,6 +178,12 @@
 
   .toggleButton {
     padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .taskTitle {
     font-size: 14px;
   }
 }

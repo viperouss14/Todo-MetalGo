@@ -3,13 +3,16 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   border-radius: 8px;
+  padding: 10px;
 }
 
 .taskId {
-  width: 9em;
+  width: clamp(6em, 15vw, 9em);
   overflow: hidden;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -19,16 +22,16 @@
   display: block;
   flex: 1;
   min-width: 0;
-  max-width: calc(100% - 20em);
+  max-width: 100%;
   text-decoration: none;
 }
 
 .title {
   display: block;
-  width: 20em;
   width: 100%;
   overflow: hidden;
   color: black;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   text-overflow: ellipsis;
   white-space: nowrap;
 
@@ -80,12 +83,28 @@
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 480px) {
+  .container {
+    margin: 20px auto;
+    padding: 16px;
+  }
+
+  .taskId {
+    width: 2rem;
+  }
+  .title {
+    overflow: visible;
+    line-height: 1.4;
+    text-overflow: unset;
+    word-wrap: break-word;
+    white-space: normal;
+  }
   .taskItem {
-    width: 100%;
+    flex-wrap: wrap;
+    min-height: 4rem;
   }
 
   .link {
-    width: auto;
+    width: 100%;
   }
 }
