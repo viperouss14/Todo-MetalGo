@@ -1,10 +1,10 @@
 # Todo App
 
 ## Установка
-\`\`\`bash
+```bash
 npm install
 npm run dev
-\`\`\`
+\\\
 
 ## Технологии
 - Next.js
