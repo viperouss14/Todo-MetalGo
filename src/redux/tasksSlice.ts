@@ -3,17 +3,17 @@ import { Task, TaskState } from '../types/task';
 import { RootState } from '../redux/store';
 
 export const fetchTasks = createAsyncThunk('tasks/fetchTasks', async (_, { getState }) => {
+  const state = getState() as RootState;
+
+  if (state.tasks.tasks.length > 0) {
+    return state.tasks.tasks;
+  }
+
   const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10');
   if (!response.ok) {
     throw new Error('Failed to fetch tasks');
   }
-  const data = await response.json();
-  const state = getState() as RootState;
-  const localTasks = state.tasks.tasks.filter(
-    (task) => !data.some((fetchedTask: Task) => fetchedTask.id === task.id)
-  );
-
-  return [...data, ...localTasks];
+  return await response.json();
 });
 
 const initialState: TaskState = {
@@ -32,7 +32,7 @@ const tasksSlice = createSlice({
         title: action.payload,
         completed: false,
       };
-      state.tasks = [...state.tasks, newTask];
+      state.tasks.push(newTask);
     },
     toggleTask: (state, action: PayloadAction<number>) => {
       const task = state.tasks.find((t) => t.id === action.payload);
@@ -47,13 +47,17 @@ const tasksSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchTasks.pending, (state) => {
-        state.loading = true;
+        if (state.tasks.length === 0) {
+          state.loading = true;
+        }
         state.error = null;
       })
       .addCase(fetchTasks.fulfilled, (state, action) => {
         state.loading = false;
-        state.tasks = action.payload;
         state.error = null;
+        if (state.tasks.length === 0) {
+          state.tasks = action.payload;
+        }
       })
       .addCase(fetchTasks.rejected, (state, action) => {
         state.loading = false;
