@@ -37,7 +37,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
       >
         <span className={styles.title}>{task.title}</span>
       </Link>
-      <button onClick={handleRemove} className={styles.removeButton}>
+      <button onClick={handleRemove} className={styles.removeButton} aria-label='Удалить задачу'>
         <Trash2 size={20} />
       </button>
     </div>

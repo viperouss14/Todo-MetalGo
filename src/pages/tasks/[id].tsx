@@ -24,7 +24,11 @@ export default function TaskDetail() {
 
   return (
     <div className={styles.container}>
-      <button onClick={() => router.back()} className={styles.backButton}>
+      <button
+        onClick={() => router.back()}
+        className={styles.backButton}
+        aria-label='Вернуться на главную страницу'
+      >
         <Undo2 className={styles.backIcon} size={24} />
       </button>
       <h2 className={`${styles.taskTitle} ${task.completed ? styles.completedTitle : ''}`}>
